@@ -32,7 +32,7 @@ DeviceDetection = function(ua) {
 		  android: Boolean(ua.match(/Android/)),
 		  macOS: Boolean(ua.match(/Mac OS X/)),
 		  win: Boolean(ua.match(/Windows/)),
-		  mac: Boolean(ua.match(/Macintosh/)),	  
+		  mac: Boolean(ua.match(/Macintosh/)),
 		  wphone: Boolean(ua.match(/(Windows Phone OS|Windows CE|Windows Mobile)/)),
 		  mobile: Boolean(ua.match(/Mobile/)),
 		  /* http://mojosunite.com/tablet-user-agent-strings */
@@ -40,26 +40,26 @@ DeviceDetection = function(ua) {
 		  tabletPc: Boolean(ua.match(/Tablet PC/)),
 		  palmDevice: Boolean(ua.match(/(PalmOS|PalmSource| Pre\/)/)),
 		  kindle: Boolean(ua.match(/(Kindle)/)),
-		  otherMobileHints: Boolean(ua.match(/(Opera Mini|IEMobile|SonyEricsson|smartphone)/)),
-		};		
+		  otherMobileHints: Boolean(ua.match(/(Opera Mini|IEMobile|SonyEricsson|smartphone)/))
+		};
 	}
 
 	this.isTouchDevice = function() {
 		return this.checks.iphone || this.checks.ipod || this.checks.ipad;
 	}
-	
+
 	this.isApple = function() {
 		return this.checks.iphone || this.checks.ipod || this.checks.ipad || this.checks.macOS  || this.checks.mac;
 	}
-	
+
 	this.isBlackberry = function() {
 		return this.checks.blackberry;
 	}
-	
+
 	this.isAndroid = function() {
 		return this.checks.android;
 	}
-	
+
 	this.isTablet = function() {
 		return this.checks.ipad || this.checks.tabletPc || this.checks.playbook || this.checks.androidTablet || this.checks.kindle;
 	}
@@ -68,8 +68,8 @@ DeviceDetection = function(ua) {
 	}
 	this.isSmartPhone = function() {
 		return (this.checks.mobile || this.checks.blackberry || this.checks.palmDevice || this.checks.otherMobileHints) && !this.isTablet() && !this.checks.ipod;
-	}	
-	
+	}
+
 	this.construct(ua);
 }
 
