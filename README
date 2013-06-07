@@ -3,7 +3,7 @@ Simple Javascript Device Detection based on user agend.
 Usage:
 -------
 
-var detection = DeviceDetection();
+var detection = new DeviceDetection();
 detection.isApple();
 detection.isTouchDevice();
 detection.isAndroid();
